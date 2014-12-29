@@ -5,4 +5,5 @@ read.more: Lire suite
 
 post:
     plural: Posts
+    latest: Derniers Messages
     on: Poster sur
