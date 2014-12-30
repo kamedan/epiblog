@@ -8,3 +8,8 @@ post:
     plural: Posts
     latest: Derniers Messages
     on: Poster sur
+    by: Postes de
+    by.author: Postes de %name%
+    
+author: 
+    empty.posts: Cet auteur n'a pas poster aucun article.

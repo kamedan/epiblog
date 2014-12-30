@@ -64,10 +64,10 @@ class Author extends \Blog\ModelBundle\Entity\Author implements \Doctrine\ORM\Pr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'id', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'name', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'posts');
+            return array('__isInitialized__', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'id', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'name', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'slug', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'posts');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'id', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'name', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'posts');
+        return array('__isInitialized__', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'id', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'name', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'slug', '' . "\0" . 'Blog\\ModelBundle\\Entity\\Author' . "\0" . 'posts');
     }
 
     /**
@@ -208,6 +208,28 @@ class Author extends \Blog\ModelBundle\Entity\Author implements \Doctrine\ORM\Pr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getName', array());
 
         return parent::getName();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSlug($slug)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSlug', array($slug));
+
+        return parent::setSlug($slug);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSlug()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSlug', array());
+
+        return parent::getSlug();
     }
 
     /**

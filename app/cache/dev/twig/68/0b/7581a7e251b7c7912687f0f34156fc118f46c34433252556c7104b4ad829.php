@@ -53,8 +53,10 @@ class __TwigTemplate_680b7581a7e251b7c7912687f0f34156fc118f46c34433252556c7104b4
          <p>EpiSousse Blog</p>
          <nav>
              <ul>
-                 <li><a href=\"#\">";
+                 <li><a href=\"";
         // line 12
+        echo $this->env->getExtension('routing')->getPath("blog_core_post_index");
+        echo "\">";
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Home"), "html", null, true);
         echo "</a></li>
              </ul>
@@ -101,6 +103,6 @@ class __TwigTemplate_680b7581a7e251b7c7912687f0f34156fc118f46c34433252556c7104b4
 
     public function getDebugInfo()
     {
-        return array (  88 => 20,  83 => 17,  74 => 21,  72 => 20,  68 => 18,  66 => 17,  58 => 12,  52 => 8,  49 => 7,  42 => 4,  39 => 3,  11 => 1,);
+        return array (  90 => 20,  85 => 17,  76 => 21,  74 => 20,  70 => 18,  68 => 17,  58 => 12,  52 => 8,  49 => 7,  42 => 4,  39 => 3,  11 => 1,);
     }
 }

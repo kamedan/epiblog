@@ -4,7 +4,14 @@ by: By
 read.more: Read more
 author: Author
 
+
+
+    
 post:
     plural: Posts
     latest: Latest Posts
     on: Posted on
+    by: Posts by
+    by.author: Posts by %name% 
+    empty.posts: This author did not write any post
+    

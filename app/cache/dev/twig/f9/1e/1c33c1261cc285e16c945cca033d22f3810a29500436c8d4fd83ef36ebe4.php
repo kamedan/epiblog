@@ -17,16 +17,17 @@ class __TwigTemplate_f91e1c33c1261cc285e16c945cca033d22f3810a29500436c8d4fd83ef3
     {
         // line 1
         echo "<article>
+    
     <header>
         <h2><a href=\"";
-        // line 3
+        // line 4
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_core_post_show", array("slug" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "slug", array()))), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "title", array()), "html", null, true);
         echo "</a></h2>  
         <p>
             ";
-        // line 5
+        // line 6
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("post.on"), "html", null, true);
         echo " <time datetime=\"";
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "createdAt", array()), "c"), "html", null, true);
@@ -34,16 +35,18 @@ class __TwigTemplate_f91e1c33c1261cc285e16c945cca033d22f3810a29500436c8d4fd83ef3
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "createdAt", array())), "html", null, true);
         echo "</time>
             ";
-        // line 6
+        // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("by"), "html", null, true);
-        echo " <a href=\"#\">";
+        echo " <a href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_core_author_show", array("slug" => $this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "author", array()), "slug", array()))), "html", null, true);
+        echo "\">";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "author", array()), "name", array()), "html", null, true);
         echo "</a>
         </p> 
     </header>
         <p>
             ";
-        // line 10
+        // line 11
         echo twig_escape_filter($this->env, twig_truncate_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "body", array()), 400), "html", null, true);
         echo " &#8212; <a href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_core_post_show", array("slug" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "slug", array()))), "html", null, true);
@@ -66,6 +69,6 @@ class __TwigTemplate_f91e1c33c1261cc285e16c945cca033d22f3810a29500436c8d4fd83ef3
 
     public function getDebugInfo()
     {
-        return array (  47 => 10,  38 => 6,  30 => 5,  23 => 3,  19 => 1,);
+        return array (  50 => 11,  39 => 7,  31 => 6,  24 => 4,  19 => 1,);
     }
 }

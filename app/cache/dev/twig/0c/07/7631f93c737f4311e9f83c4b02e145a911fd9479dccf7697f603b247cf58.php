@@ -52,8 +52,10 @@ class __TwigTemplate_0c077631f93c737f4311e9f83c4b02e145a911fd9479dccf7697f603b24
         
         
             <p>
-                <a href=\"#\" title=\"";
+                <a href=\"";
         // line 10
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_core_author_show", array("slug" => $this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "author", array()), "slug", array()))), "html", null, true);
+        echo "\" title=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("post.by.author", array("%name%" => "post.author.name")), "html", null, true);
         echo "\">";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "author", array()), "name", array()), "html", null, true);
@@ -114,6 +116,6 @@ class __TwigTemplate_0c077631f93c737f4311e9f83c4b02e145a911fd9479dccf7697f603b24
 
     public function getDebugInfo()
     {
-        return array (  97 => 31,  84 => 25,  79 => 23,  73 => 19,  70 => 18,  57 => 10,  50 => 6,  47 => 5,  44 => 4,  38 => 2,  11 => 1,);
+        return array (  99 => 31,  86 => 25,  81 => 23,  75 => 19,  72 => 18,  57 => 10,  50 => 6,  47 => 5,  44 => 4,  38 => 2,  11 => 1,);
     }
 }

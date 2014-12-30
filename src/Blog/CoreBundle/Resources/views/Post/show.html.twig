@@ -7,7 +7,7 @@
         
         
             <p>
-                <a href="#" title="{{'post.by.author' | trans({'%name%': 'post.author.name'}) }}">{{post.author.name}}</a>
+                <a href="{{path('blog_core_author_show', {slug: post.author.slug} )}}" title="{{'post.by.author' | trans({'%name%': 'post.author.name'}) }}">{{post.author.name}}</a>
             </p> 
         
 

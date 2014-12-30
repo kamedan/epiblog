@@ -1,0 +1,29 @@
+{% extends "CoreBundle::layout.html.twig" %}
+
+{% block title %}{{'post.by.author' | trans({'%name%': author.name}) }}{% endblock %}
+
+
+{% block sidebar %}
+    <aside>
+        <h3>{{'post.by' | trans}}</h3>
+        
+        
+            <p>
+              {{author.name}}  
+            </p> 
+        
+
+
+    </aside>
+{% endblock %}
+
+{% block section %}
+     
+ {% for post in posts %}
+    {{include('CoreBundle:Post:_post.html.twig', {post: post})}}
+    {% else %}
+        <p>{{'post.empty.posts' | trans}}</p>
+        
+{% endfor %}
+
+{% endblock %}

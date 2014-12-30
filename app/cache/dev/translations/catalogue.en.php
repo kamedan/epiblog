@@ -111,6 +111,9 @@ $catalogue = new MessageCatalogue('en', array (
     'post.plural' => 'Posts',
     'post.latest' => 'Latest Posts',
     'post.on' => 'Posted on',
+    'post.by' => 'Posts by',
+    'post.by.author' => 'Posts by %name%',
+    'post.empty.posts' => 'This author did not write any post',
   ),
 ));
 
