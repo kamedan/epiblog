@@ -42,11 +42,23 @@ class __TwigTemplate_f91e1c33c1261cc285e16c945cca033d22f3810a29500436c8d4fd83ef3
         echo "\">";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "author", array()), "name", array()), "html", null, true);
         echo "</a>
+            <a href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_core_post_show", array("slug" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "slug", array()))), "html", null, true);
+        echo "#comments\">
+                ";
+        // line 9
+        $context["count"] = twig_length_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "comments", array()));
+        // line 10
+        echo "                ";
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->transchoice("post.comments", (isset($context["count"]) ? $context["count"] : $this->getContext($context, "count"))), "html", null, true);
+        echo "
+            </a>
         </p> 
     </header>
         <p>
             ";
-        // line 11
+        // line 15
         echo twig_escape_filter($this->env, twig_truncate_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "body", array()), 400), "html", null, true);
         echo " &#8212; <a href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_core_post_show", array("slug" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "slug", array()))), "html", null, true);
@@ -69,6 +81,6 @@ class __TwigTemplate_f91e1c33c1261cc285e16c945cca033d22f3810a29500436c8d4fd83ef3
 
     public function getDebugInfo()
     {
-        return array (  50 => 11,  39 => 7,  31 => 6,  24 => 4,  19 => 1,);
+        return array (  62 => 15,  53 => 10,  51 => 9,  47 => 8,  39 => 7,  31 => 6,  24 => 4,  19 => 1,);
     }
 }

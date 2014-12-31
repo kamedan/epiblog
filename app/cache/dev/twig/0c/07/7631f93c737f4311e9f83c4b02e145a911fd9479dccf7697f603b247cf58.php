@@ -100,6 +100,60 @@ class __TwigTemplate_0c077631f93c737f4311e9f83c4b02e145a911fd9479dccf7697f603b24
         echo " 
             </p>
     </article>
+            
+            <a id=\"comments\"></a>
+            <h2>";
+        // line 36
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("comment.plural"), "html", null, true);
+        echo "</h2>
+            
+            ";
+        // line 38
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "comments", array()));
+        $context['loop'] = array(
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        );
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+            // line 39
+            echo "                ";
+            echo twig_include($this->env, $context, "CoreBundle:Post:_comment.html.twig", array("comment" => $context["comment"]));
+            echo "
+            ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 41
+        echo "            
+            
+            <h4>";
+        // line 43
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("comment.write"), "html", null, true);
+        echo ":</h4>
+            
+            ";
+        // line 45
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form', array("action" => ($this->env->getExtension('routing')->getPath("blog_core_post_createcomment", array("slug" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "slug", array()))) . "#comments")));
+        echo "
 
 ";
     }
@@ -116,6 +170,6 @@ class __TwigTemplate_0c077631f93c737f4311e9f83c4b02e145a911fd9479dccf7697f603b24
 
     public function getDebugInfo()
     {
-        return array (  99 => 31,  86 => 25,  81 => 23,  75 => 19,  72 => 18,  57 => 10,  50 => 6,  47 => 5,  44 => 4,  38 => 2,  11 => 1,);
+        return array (  155 => 45,  150 => 43,  146 => 41,  129 => 39,  112 => 38,  107 => 36,  99 => 31,  86 => 25,  81 => 23,  75 => 19,  72 => 18,  57 => 10,  50 => 6,  47 => 5,  44 => 4,  38 => 2,  11 => 1,);
     }
 }

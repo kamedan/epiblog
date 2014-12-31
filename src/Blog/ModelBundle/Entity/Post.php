@@ -57,6 +57,25 @@ class Post extends Timestampable
      */
 
     private $author;
+    
+    /**
+     *
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", cascade={"remove"})
+     */
+    private $comments;
+    
+    
+    
+    
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
 
@@ -123,7 +142,7 @@ class Post extends Timestampable
     /**
      * Set author
      *
-     * @param \Blog\ModelBundle\Entity\Author $author
+     * @param Author $author
      * @return Post
      */
     public function setAuthor(Author $author)
@@ -136,7 +155,7 @@ class Post extends Timestampable
     /**
      * Get author
      *
-     * @return \Blog\ModelBundle\Entity\Author 
+     * @return Author 
      */
     public function getAuthor()
     {
@@ -164,5 +183,39 @@ class Post extends Timestampable
     public function getSlug()
     {
         return $this->slug;
+    }
+    
+
+    /**
+     * Add comments
+     *
+     * @param Comment $comments
+     * @return Post
+     */
+    public function addComment(Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param Comment $comments
+     */
+    public function removeComment(Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

@@ -105,15 +105,21 @@ $catalogue = new MessageCatalogue('en', array (
   'messages' => 
   array (
     'home' => 'Home',
+    'on' => 'on',
     'by' => 'By',
     'read.more' => 'Read more',
     'author' => 'Author',
+    'name' => 'name',
+    'send' => 'Send',
     'post.plural' => 'Posts',
     'post.latest' => 'Latest Posts',
     'post.on' => 'Posted on',
     'post.by' => 'Posts by',
     'post.by.author' => 'Posts by %name%',
     'post.empty.posts' => 'This author did not write any post',
+    'post.comments' => '{0} No comments | {1} %count% comment | ]1,Inf] %count% comments ',
+    'comment.singular' => 'comment',
+    'comment.plural' => 'Comments',
   ),
 ));
 
