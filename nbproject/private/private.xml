@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/A:/xampp/htdocs/epiblog/src/Blog/CoreBundle/Resources/views/Author/show.html.twig</file>
             <file>file:/A:/xampp/htdocs/epiblog/src/Blog/CoreBundle/Resources/translations/messages.fr.yml</file>
-            <file>file:/A:/xampp/htdocs/epiblog/src/Blog/CoreBundle/Resources/views/layout.html.twig</file>
+            <file>file:/A:/xampp/htdocs/epiblog/src/Blog/CoreBundle/Resources/views/Post/show.html.twig</file>
+            <file>file:/A:/xampp/htdocs/epiblog/src/Blog/ModelBundle/Form/CommentType.php</file>
             <file>file:/A:/xampp/htdocs/epiblog/src/Blog/CoreBundle/Controller/PostController.php</file>
             <file>file:/A:/xampp/htdocs/epiblog/src/Blog/CoreBundle/Resources/translations/messages.en.yml</file>
-            <file>file:/A:/xampp/htdocs/epiblog/src/Blog/CoreBundle/Controller/AuthorController.php</file>
         </group>
     </open-files>
 </project-private>
