@@ -154,7 +154,7 @@ class __TwigTemplate_0c077631f93c737f4311e9f83c4b02e145a911fd9479dccf7697f603b24
         // line 45
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form', array("action" => ($this->env->getExtension('routing')->getPath("blog_core_post_createcomment", array("slug" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "slug", array()))) . "#comments")));
         echo "
-
+            
 ";
     }
 

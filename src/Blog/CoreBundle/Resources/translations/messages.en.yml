@@ -22,4 +22,5 @@ post:
 comment:
     singular: comment
     plural: Comments
+    write: Write your comment
     

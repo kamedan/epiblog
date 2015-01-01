@@ -120,6 +120,7 @@ $catalogue = new MessageCatalogue('en', array (
     'post.comments' => '{0} No comments | {1} %count% comment | ]1,Inf] %count% comments ',
     'comment.singular' => 'comment',
     'comment.plural' => 'Comments',
+    'comment.write' => 'Write your comment',
   ),
 ));
 

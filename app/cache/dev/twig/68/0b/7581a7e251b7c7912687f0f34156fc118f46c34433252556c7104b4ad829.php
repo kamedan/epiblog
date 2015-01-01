@@ -71,8 +71,33 @@ class __TwigTemplate_680b7581a7e251b7c7912687f0f34156fc118f46c34433252556c7104b4
    <section>
        ";
         // line 20
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
+        foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
+            // line 21
+            echo "           ";
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable($context["messages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 22
+                echo "               <p class=\"session-message\">";
+                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                echo "</p>
+           ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 24
+            echo "       ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 25
+        echo "       ";
         $this->displayBlock('section', $context, $blocks);
-        // line 21
+        // line 26
         echo "   </section>
    
    <footer>
@@ -86,7 +111,7 @@ class __TwigTemplate_680b7581a7e251b7c7912687f0f34156fc118f46c34433252556c7104b4
     {
     }
 
-    // line 20
+    // line 25
     public function block_section($context, array $blocks = array())
     {
     }
@@ -103,6 +128,6 @@ class __TwigTemplate_680b7581a7e251b7c7912687f0f34156fc118f46c34433252556c7104b4
 
     public function getDebugInfo()
     {
-        return array (  90 => 20,  85 => 17,  76 => 21,  74 => 20,  70 => 18,  68 => 17,  58 => 12,  52 => 8,  49 => 7,  42 => 4,  39 => 3,  11 => 1,);
+        return array (  115 => 25,  110 => 17,  101 => 26,  98 => 25,  92 => 24,  83 => 22,  78 => 21,  74 => 20,  70 => 18,  68 => 17,  58 => 12,  52 => 8,  49 => 7,  42 => 4,  39 => 3,  11 => 1,);
     }
 }

@@ -183,3 +183,16 @@ e3c26f,127.0.0.1,GET,http://127.0.0.1:8000/lorem-ipsum-dolor-sit-amet,1420064086
 6c324e,127.0.0.1,GET,http://127.0.0.1:8000/lorem-ipsum-dolor-sit-amet,1420064781,
 eaaf14,127.0.0.1,GET,http://127.0.0.1:8000/,1420066425,
 a5eef1,127.0.0.1,GET,http://127.0.0.1:8000/lorem-ipsum-dolor-sit-amet,1420066429,
+46b871,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/,1420105508,
+f0b72e,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet,1420105524,
+3f0d3e,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet,1420105554,
+beb77e,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet,1420105692,
+60c315,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet,1420107213,
+32cbae,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet/create-comment/,1420107233,ab530c
+ab530c,127.0.0.1,POST,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet/create-comment/,1420107233,
+f0323e,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet,1420107450,
+b5ec0b,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet/create-comment/,1420107461,4005d7
+4005d7,127.0.0.1,POST,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet/create-comment/,1420107461,
+c72c99,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet,1420107513,
+9d7b16,127.0.0.1,POST,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet/create-comment/,1420107519,
+77242e,127.0.0.1,GET,http://localhost/epiblog/web/app_dev.php/lorem-ipsum-dolor-sit-amet,1420107520,
