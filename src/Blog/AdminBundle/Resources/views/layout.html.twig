@@ -9,8 +9,8 @@
          <p>EpiSousse Blog | Admin</p>
          <nav>
              <ul>
-                 <li><a href="#">Posts</a></li>
-                 <li><a href="#">Authors</a></li>
+                 <li><a href="{{path('blog_admin_post_index')}}">Posts</a></li>
+                 <li><a href="{{path('blog_admin_author_index')}}">Authors</a></li>
              </ul>
          </nav>
      </header>
@@ -22,7 +22,10 @@
            {%for message in messages%}
                <p class="session-message">{{message}}</p>
            {%endfor%}
-       {%endfor%}
+       {%endfor%} 
+       
+       {%block section %}
+       {% endblock %}
        
    </section>
    

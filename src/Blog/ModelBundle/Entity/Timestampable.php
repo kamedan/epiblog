@@ -62,7 +62,7 @@ abstract class Timestampable
      */
     public function setUpdatedAt($updatedAt)
     {
-        $this->$updatedAt = $updatedAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
@@ -70,11 +70,11 @@ abstract class Timestampable
     /**
      * Get updatedAt
      *
-     * @return \DateTime 
+     * @return /DateTime 
      */
     public function getUpdatedAt()
     {
-        return $this->$updatedAt;
+        return $this->updatedAt;
     }
 }
 

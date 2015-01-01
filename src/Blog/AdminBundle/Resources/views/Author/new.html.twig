@@ -1,0 +1,20 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block title %}
+   Author creation
+    
+{% endblock %}
+
+{% block section %}
+    <h1>Author creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('blog_admin_author_index') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

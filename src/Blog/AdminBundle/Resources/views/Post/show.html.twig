@@ -1,0 +1,45 @@
+{% extends "AdminBundle::layout.html.twig" %}
+
+{% block title %}
+   {{entity.title}}
+    
+{% endblock %}
+{% block section %}
+    <h1>{{entity.title}}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Created At</th>
+                <td>{{entity.createdAt | date('Y-m-d H:i:s')}}</td>
+            </tr>
+            <tr>
+                <th>Updated At</th>
+                <td>{{entity.updatedAt | date('Y-m-d H:i:s')}}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            
+            <tr>
+                <th>Body</th>
+                <td>{{ entity.body | nl2br }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('blog_admin_post_index') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('blog_admin_post_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

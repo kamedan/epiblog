@@ -268,6 +268,17 @@ class Author extends \Blog\ModelBundle\Entity\Author implements \Doctrine\ORM\Pr
     /**
      * {@inheritDoc}
      */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function setCreatedAt($createdAt)
     {
 

@@ -1,0 +1,49 @@
+{% extends 'AdminBundle::layout.html.twig' %}
+{% block title %}
+    Posts list
+    
+{% endblock %}
+{% block section %}
+    <h1>Post list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Created at</th>
+                <th>Updated at</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{entity.createdAt | date('Y-m-d H:i:s')}}</td>
+                <td>{%if entity.createdAt %} {{entity.createdAt | date('Y-m-d H:i:s')}} {% endif %}</td>
+                <td>{{ entity.title }}</td>
+               
+                <td>{{ entity.body | truncate(150) }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('blog_admin_post_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('blog_admin_post_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('blog_admin_post_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
