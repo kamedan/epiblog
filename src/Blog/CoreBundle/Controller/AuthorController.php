@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
  * class AuthorController
+ * 
+ * @Route("/{_locale}/author", requirements={"_locale"="en|fr"}, defaults={"_locale"="fr"} )
  */
 class AuthorController extends Controller
 {
@@ -20,7 +22,7 @@ class AuthorController extends Controller
      * @throws NotFoundHttpException
      * @return array
      * 
-     * @Route("/author/{slug}")
+     * @Route("/{slug}")
      * @Template()
      */
     public function showAction($slug)

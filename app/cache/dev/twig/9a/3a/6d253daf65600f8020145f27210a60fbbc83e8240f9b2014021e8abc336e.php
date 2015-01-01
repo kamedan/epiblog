@@ -60,7 +60,17 @@ class __TwigTemplate_9a3a6d253daf65600f8020145f27210a60fbbc83e8240f9b2014021e8ab
         // line 13
         echo $this->env->getExtension('routing')->getPath("blog_admin_author_index");
         echo "\">Authors</a></li>
-             </ul>
+                 ";
+        // line 14
+        if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
+            // line 15
+            echo "                 <li><a href=\"";
+            echo $this->env->getExtension('routing')->getPath("blog_admin_security_logout");
+            echo "\">Logout</a></li>
+                 ";
+        }
+        // line 17
+        echo "             </ul>
          </nav>
      </header>
              
@@ -68,16 +78,16 @@ class __TwigTemplate_9a3a6d253daf65600f8020145f27210a60fbbc83e8240f9b2014021e8ab
    
    <section>
        ";
-        // line 21
+        // line 24
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
         foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-            // line 22
+            // line 25
             echo "           ";
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 23
+                // line 26
                 echo "               <p class=\"session-message\">";
                 echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                 echo "</p>
@@ -86,7 +96,7 @@ class __TwigTemplate_9a3a6d253daf65600f8020145f27210a60fbbc83e8240f9b2014021e8ab
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 25
+            // line 28
             echo "       ";
         }
         $_parent = $context['_parent'];
@@ -95,9 +105,9 @@ class __TwigTemplate_9a3a6d253daf65600f8020145f27210a60fbbc83e8240f9b2014021e8ab
         echo " 
        
        ";
-        // line 27
+        // line 30
         $this->displayBlock('section', $context, $blocks);
-        // line 29
+        // line 32
         echo "       
    </section>
    
@@ -107,10 +117,10 @@ class __TwigTemplate_9a3a6d253daf65600f8020145f27210a60fbbc83e8240f9b2014021e8ab
  ";
     }
 
-    // line 27
+    // line 30
     public function block_section($context, array $blocks = array())
     {
-        // line 28
+        // line 31
         echo "       ";
     }
 
@@ -126,6 +136,6 @@ class __TwigTemplate_9a3a6d253daf65600f8020145f27210a60fbbc83e8240f9b2014021e8ab
 
     public function getDebugInfo()
     {
-        return array (  114 => 28,  111 => 27,  101 => 29,  99 => 27,  90 => 25,  81 => 23,  76 => 22,  72 => 21,  61 => 13,  57 => 12,  51 => 8,  48 => 7,  41 => 3,  38 => 2,  11 => 1,);
+        return array (  124 => 31,  121 => 30,  111 => 32,  109 => 30,  100 => 28,  91 => 26,  86 => 25,  82 => 24,  73 => 17,  67 => 15,  65 => 14,  61 => 13,  57 => 12,  51 => 8,  48 => 7,  41 => 3,  38 => 2,  11 => 1,);
     }
 }

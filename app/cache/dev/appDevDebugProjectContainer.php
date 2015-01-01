@@ -1983,12 +1983,15 @@ class appDevDebugProjectContainer extends Container
 
         $j = new \Symfony\Component\Security\Http\HttpUtils($d, $d);
 
-        $k = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($j, array('login_path' => 'blog_admin_security_login', 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false));
-        $k->setProviderKey('admin_area');
+        $k = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $j, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($j, '/admin/post'), array('csrf_parameter' => '_csrf_token', 'intention' => 'logout', 'logout_path' => 'blog_admin_security_logout'));
+        $k->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
 
-        $l = new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $j, 'blog_admin_security_login', false);
+        $l = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($j, array('login_path' => 'blog_admin_security_login', 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false));
+        $l->setProviderKey('admin_area');
 
-        return $this->services['security.firewall.map.context.admin_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($i, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.in_memory')), 'admin_area', $a, $c), 2 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $j, 'admin_area', $k, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $j, array('login_path' => 'blog_admin_security_login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => 'blog_admin_security_logincheck', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, NULL), 3 => new \Symfony\Component\Security\Http\Firewall\BasicAuthenticationListener($b, $f, 'admin_area', $l, $a), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '54a546198a98c', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $i, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $j, 'admin_area', $l, NULL, NULL, $a));
+        $m = new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $j, 'blog_admin_security_login', false);
+
+        return $this->services['security.firewall.map.context.admin_area'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($i, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('security.user.provider.concrete.in_memory')), 'admin_area', $a, $c), 2 => $k, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $j, 'admin_area', $l, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $j, array('login_path' => 'blog_admin_security_login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => 'blog_admin_security_logincheck', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\BasicAuthenticationListener($b, $f, 'admin_area', $m, $a), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '54a59e000a30f', $a), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $i, $f)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $j, 'admin_area', $m, NULL, NULL, $a));
     }
 
     /**
@@ -2549,7 +2552,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTemplating_Helper_LogoutUrlService()
     {
-        return $this->services['templating.helper.logout_url'] = new \Symfony\Bundle\SecurityBundle\Templating\Helper\LogoutUrlHelper($this, $this->get('router'));
+        $this->services['templating.helper.logout_url'] = $instance = new \Symfony\Bundle\SecurityBundle\Templating\Helper\LogoutUrlHelper($this, $this->get('router'));
+
+        $instance->registerListener('admin_area', 'blog_admin_security_logout', 'logout', '_csrf_token', NULL);
+
+        return $instance;
     }
 
     /**
@@ -3531,7 +3538,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.in_memory'), new \Symfony\Component\Security\Core\User\UserChecker(), 'admin_area', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('54a546198a98c')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('security.user.provider.concrete.in_memory'), new \Symfony\Component\Security\Core\User\UserChecker(), 'admin_area', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('54a59e000a30f')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
