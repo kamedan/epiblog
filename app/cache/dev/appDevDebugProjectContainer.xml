@@ -22,6 +22,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="CoreBundle">Blog\CoreBundle\CoreBundle</parameter>
       <parameter key="ModelBundle">Blog\ModelBundle\ModelBundle</parameter>
+      <parameter key="AdminBundle">Blog\AdminBundle\AdminBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
@@ -2491,7 +2492,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>54a517db50214</argument>
+            <argument>54a5283cdcfb1</argument>
           </service>
         </argument>
       </argument>
@@ -2607,7 +2608,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>54a517db50214</argument>
+            <argument>54a5283cdcfb1</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -3497,6 +3498,10 @@
       <call method="addPath">
         <argument>A:\xampp\htdocs\epiblog\src\Blog\CoreBundle/Resources/views</argument>
         <argument>Core</argument>
+      </call>
+      <call method="addPath">
+        <argument>A:\xampp\htdocs\epiblog\src\Blog\AdminBundle/Resources/views</argument>
+        <argument>Admin</argument>
       </call>
       <call method="addPath">
         <argument>A:\xampp\htdocs\epiblog\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
